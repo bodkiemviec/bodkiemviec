@@ -3,8 +3,10 @@
 // 1. Lấy các phần tử cần thiết
 const themeLink = document.getElementById('theme-link'); // Thẻ <link> với ID="theme-link"
 const toggleSwitch = document.getElementById('checkbox'); // Nút checkbox
-const DARK_THEME_PATH = '/css/index4.css';
-const LIGHT_THEME_PATH = '/css/index3.css';
+
+// SỬA TẠI ĐÂY: Bỏ dấu / ở đầu đường dẫn
+const DARK_THEME_PATH = 'css/index4.css';
+const LIGHT_THEME_PATH = 'css/index3.css';
 
 // 2. Hàm chuyển đổi file CSS
 function switchCssFile(event) {
@@ -31,8 +33,8 @@ window.addEventListener('load', () => {
         themeLink.href = DARK_THEME_PATH;
         toggleSwitch.checked = true;
     } else {
-        // Mặc định hoặc theme đã lưu là light, không cần làm gì nhiều
-        // (Do href mặc định trong HTML đã là light-theme.css)
+        // Mặc định hoặc theme đã lưu là light
+        themeLink.href = LIGHT_THEME_PATH;
         toggleSwitch.checked = false;
     }
 });
